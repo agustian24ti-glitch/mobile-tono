@@ -1,4 +1,4 @@
-package com.example.merkurius_endy
+package com.example.mobile_tono
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,10 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.merkurius_endy.Pertemuan_3.ThirdResultActivity
-import com.example.merkurius_endy.Pertemuan_4.FourthActivity
-import com.example.merkurius_endy.databinding.ActivityMainBinding
-import com.example.merkurius_endy.databinding.ActivityThirdBinding
+import com.example.mobile_tono.Pertemuan_4.FourthActivity
+import com.example.mobile_tono.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

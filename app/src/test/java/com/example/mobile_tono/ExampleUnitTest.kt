@@ -1,4 +1,4 @@
-package com.example.merkurius_endy
+package com.example.mobile_tono
 
 import org.junit.Test
 

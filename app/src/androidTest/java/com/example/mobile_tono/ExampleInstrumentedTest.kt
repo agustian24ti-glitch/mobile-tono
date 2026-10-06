@@ -1,4 +1,4 @@
-package com.example.merkurius_endy
+package com.example.mobile_tono
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

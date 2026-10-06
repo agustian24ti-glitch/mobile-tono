@@ -1,11 +1,11 @@
-package com.example.merkurius_endy.Pertemuan_3
+package com.example.mobile_tono.Pertemuan_3
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.merkurius_endy.R
+import com.example.mobile_tono.R
 
 class ThirdResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

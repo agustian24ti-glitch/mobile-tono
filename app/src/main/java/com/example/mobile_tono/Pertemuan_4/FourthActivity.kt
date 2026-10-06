@@ -1,4 +1,4 @@
-package com.example.merkurius_endy.Pertemuan_4
+package com.example.mobile_tono.Pertemuan_4
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,11 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.merkurius_endy.MainActivity
-import com.example.merkurius_endy.Pertemuan_3.ThirdResultActivity
-import com.example.merkurius_endy.R
-import com.example.merkurius_endy.databinding.ActivityFourthBinding
-import com.example.merkurius_endy.databinding.ActivityMainBinding
+import com.example.mobile_tono.MainActivity
+import com.example.mobile_tono.R
+import com.example.mobile_tono.databinding.ActivityFourthBinding
 import com.google.android.material.snackbar.Snackbar
 
 class FourthActivity : AppCompatActivity() {
