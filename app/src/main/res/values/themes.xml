@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Merkuriusendy" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Mobiletono" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Merkuriusendy" parent="Base.Theme.Merkuriusendy" />
+    <style name="Theme.Mobiletono" parent="Base.Theme.Mobiletono" />
 </resources>

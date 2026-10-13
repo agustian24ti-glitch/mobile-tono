@@ -4,62 +4,70 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.example.mobile_tono.R
 import com.example.mobile_tono.databinding.ActivityWebViewBinding
 
 class WebViewActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityWebViewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+
         binding = ActivityWebViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Setup Toolbar
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        binding.webView.webViewClient = WebViewClient()
+        binding.webView.settings.javaScriptEnabled = true
+        binding.webView.loadUrl("https://pcr.ac.id")
+
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Web Merdeka"
+            title = "Politeknik Caltex Riau"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
-        // Konfigurasi WebView
-        binding.webView.webViewClient = WebViewClient()
-        binding.webView.settings.javaScriptEnabled = true
-        binding.webView.loadUrl("https://merdeka.com")
-
-        // Auto Hide/Show Toolbar saat scroll web
+        // Fitur scroll Sembunyikan/Tampilkan AppBar
         binding.webView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
             if (scrollY > oldScrollY) {
-                binding.appBar.setExpanded(false, true)
+                binding.appBar.setExpanded(false, true) // Sembunyikan
             } else if (scrollY < oldScrollY) {
-                binding.appBar.setExpanded(true, true)
+                binding.appBar.setExpanded(true, true)  // Tampilkan
             }
         }
 
-        // Menangani Tombol Back dengan API AndroidX Terbaru (Pengganti onBackPressed)
+        // Menangani tombol kembali pada WebView secara modern
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (binding.webView.canGoBack()) {
-                    binding.webView.goBack() // Kembali ke halaman web sebelumnya
+                    binding.webView.goBack()
                 } else {
                     isEnabled = false
-                    onBackPressedDispatcher.onBackPressed() // Keluar dari Activity
+                    onBackPressedDispatcher.onBackPressed()
                 }
             }
         })
     }
 
-    // Menangani tombol back di Toolbar (ujung kiri atas)
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return if (item.itemId == android.R.id.home) {
-            finish()
-            true
-        } else {
-            super.onOptionsItemSelected(item)
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

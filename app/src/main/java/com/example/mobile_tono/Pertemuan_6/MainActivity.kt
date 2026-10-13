@@ -1,4 +1,4 @@
-package com.example.mobile_tono
+package com.example.mobile_tono.Pertemuan_6
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.mobile_tono.Pertemuan_4.FourthActivity
+import com.example.mobile_tono.R
 import com.example.mobile_tono.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

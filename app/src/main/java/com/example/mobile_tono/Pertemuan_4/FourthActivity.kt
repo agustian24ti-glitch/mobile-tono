@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.mobile_tono.MainActivity
+import com.example.mobile_tono.Pertemuan_6.MainActivity
 import com.example.mobile_tono.R
 import com.example.mobile_tono.databinding.ActivityFourthBinding
 import com.google.android.material.snackbar.Snackbar
