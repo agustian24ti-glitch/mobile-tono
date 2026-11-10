@@ -25,9 +25,10 @@ class MessageAdapter(
         binding.textSender.text = item.sender
         binding.textMessage.text = item.message
 
-        // Load gambar dari URL ke ImageView menggunakan Glide
+        // Load gambar dari URL ke ImageView menggunakan Glide + Efek Bulat (circleCrop)
         Glide.with(context)
             .load(item.avatarUrl)
+            .circleCrop() // Membuat foto wajah timbul bulat seperti aplikasi chat
             .into(binding.avatarImg)
 
         return binding.root

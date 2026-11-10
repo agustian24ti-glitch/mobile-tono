@@ -1,80 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Home.HomeFragment">
+    android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <!-- Gambar Background -->
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Home"
-        app:titleTextColor="@android:color/white" />
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/phone_bg" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
 
+            <!-- Judul (Sudah diberi marginTop 48dp agar tidak tertutup notch kamera) -->
             <TextView
-                android:id="@+id/tvWelcome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Welcome!"
-                android:textSize="24sp"
+                android:layout_marginTop="48dp"
+                android:text="Halaman Home"
+                android:textColor="@color/black"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="Silahkan pilih menu pertemuan:"
-                android:textSize="14sp" />
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="24dp"
+                android:text="Silahkan pilih..."
+                android:textColor="#555555" />
+
+            <!-- Tombol-tombol -->
+            <Button
+                android:id="@+id/btnSnackBar"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#5C4D9A"
+                android:text="Snack Bar" />
 
             <Button
-                android:id="@+id/btnToSecond"
-                android:layout_width="match_parent"
+                android:id="@+id/btnAlertDialog"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
-                android:text="Pertemuan 2" />
-
-            <Button
-                android:id="@+id/btnToThird"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Pertemuan 3" />
-
-            <Button
-                android:id="@+id/btnToFourth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Pertemuan 4 (Kirim Data)" />
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#5C4D9A"
+                android:text="Alert Dialog" />
 
             <Button
                 android:id="@+id/btnToFifth"
-                android:layout_width="match_parent"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#D81B60"
                 android:text="Pertemuan 5" />
 
             <Button
                 android:id="@+id/btnToSixth"
-                android:layout_width="match_parent"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
-                android:text="Pertemuan 6 (Fragment)" />
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#00897B"
+                android:text="Pertemuan 6" />
+
+            <Button
+                android:id="@+id/btnToTenth"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#795548"
+                android:text="Pertemuan 10" />
+
+            <Button
+                android:id="@+id/btnToEleventh"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#1976D2"
+                android:text="Pertemuan 11" />
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#E53935"
+                android:text="Logout" />
 
         </LinearLayout>
     </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
