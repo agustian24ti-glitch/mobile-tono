@@ -1,5 +1,6 @@
 package com.example.mobile_tono.Pertemuan_4
 
+import com.example.mobile_tono.BaseActivity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -7,7 +8,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.mobile_tono.Pertemuan_6.MainActivity
 import com.example.mobile_tono.R
 import com.example.mobile_tono.databinding.ActivityFourthBinding
 import com.google.android.material.snackbar.Snackbar
@@ -32,7 +32,7 @@ class FourthActivity : AppCompatActivity() {
         Log.e("Data Intent","Nama: $name , Usia: $age, Asal: $from")
 
         binding.btnKembali.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, BaseActivity::class.java)
             startActivity(intent)
             finish() // Activity lama dihapus dari stack
         }

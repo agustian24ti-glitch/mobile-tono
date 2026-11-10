@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import com.example.mobile_tono.BaseActivity
 import com.example.mobile_tono.R
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -32,7 +33,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         // Jika user sudah login, buka MainActivity
         if (isLogin) {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, BaseActivity::class.java))
             finish()
             return
         }
@@ -40,7 +41,7 @@ class SplashScreenActivity : AppCompatActivity() {
         // Jika belum, tunggu 2 detik lalu buka AuthActivity
         lifecycleScope.launch {
             delay(2000)
-            val intent = Intent(this@SplashScreenActivity, AuthActivity::class.java)
+            val intent = Intent(this@SplashScreenActivity, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
