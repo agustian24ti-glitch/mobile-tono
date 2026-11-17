@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Izin Internet untuk WebView & Glide -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,19 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobiletono">
 
-        <!-- BaseActivity dijadikan LAUNCHER utama -->
         <activity
             android:name=".BaseActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <!-- Activity pendukung lainnya -->
         <activity
             android:name=".Pertemuan_2.SecondActivity"
             android:exported="false"
@@ -79,6 +70,16 @@
             android:name=".Pertemuan_11.DetailActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Note.NoteActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
